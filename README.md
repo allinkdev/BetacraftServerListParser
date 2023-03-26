@@ -18,7 +18,7 @@ This utilises the wonderful [Jsoup] library to parse the site.
 
 # Installation
 
-Add `jitpack.io` to your repositories, and add `com.github.allinkdev:BetacraftServerListParser:1.0.2` to your
+Add `jitpack.io`, and central Maven, to your repositories, and add `com.github.allinkdev:BetacraftServerListParser:1.1.0` to your
 dependencies.
 
 # Usage
