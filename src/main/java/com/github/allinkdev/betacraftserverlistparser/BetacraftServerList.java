@@ -81,6 +81,13 @@ public final class BetacraftServerList {
                     continue;
                 }
 
+                final int firstIndexOfOpeningSquareBracket = rawNameStr.indexOf("[");
+
+                if (firstIndexOfOpeningSquareBracket == -1) {
+                    continue;
+                }
+
+                final String gameVersion = rawNameStr.substring(Math.min(firstIndexOfOpeningSquareBracket + 1, rawNameStr.length()), firstIndexOfClosingSquareBracket);
                 final String halfParsedNameStr = rawNameStr.substring(Math.min(firstIndexOfClosingSquareBracket + 2, rawNameStr.length() - 1));
                 final boolean onlineMode = halfParsedNameStr.endsWith("[Online Mode]");
                 final String parsedNameStr = onlineMode ? halfParsedNameStr.replace("[Online Mode]", "") : halfParsedNameStr;
@@ -123,7 +130,8 @@ public final class BetacraftServerList {
                         port,
                         version,
                         onlineMode,
-                        joinUrl);
+                        joinUrl,
+                        gameVersion);
 
                 servers.add(server);
             }
@@ -223,6 +231,16 @@ public final class BetacraftServerList {
      */
     public List<Server> getOfflineModeServers() {
         return this.getServersWithOnlineMode(false);
+    }
+
+    /**
+     * @return servers with the provided game version string
+     */
+    public List<Server> getWithGameVersion(final String gameVersion) {
+        return Collections.unmodifiableList(this.getServers()
+                .stream()
+                .filter(s -> s.getGameVersion().equals(gameVersion))
+                .collect(Collectors.toList()));
     }
 
     @Override

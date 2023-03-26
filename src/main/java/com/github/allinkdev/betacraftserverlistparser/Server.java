@@ -9,8 +9,9 @@ public final class Server {
     private final Version version;
     private final boolean onlineMode;
     private final String joinUrl;
+    private final String gameVersion;
 
-    Server(final String name, final int playerCount, final int playerLimit, final String host, final int port, final Version version, final boolean onlineMode, final String joinUrl) {
+    Server(final String name, final int playerCount, final int playerLimit, final String host, final int port, final Version version, final boolean onlineMode, final String joinUrl, final String gameVersion) {
         this.name = name.trim();
         this.playerCount = playerCount;
         this.playerLimit = playerLimit;
@@ -19,10 +20,15 @@ public final class Server {
         this.version = version;
         this.onlineMode = onlineMode;
         this.joinUrl = joinUrl;
+        this.gameVersion = gameVersion;
     }
 
     public String getJoinUrl() {
         return this.joinUrl;
+    }
+
+    public String getGameVersion() {
+        return this.gameVersion;
     }
 
     public boolean isOnlineMode() {
