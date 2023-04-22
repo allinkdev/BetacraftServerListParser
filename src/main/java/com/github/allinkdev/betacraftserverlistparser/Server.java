@@ -1,6 +1,6 @@
 package com.github.allinkdev.betacraftserverlistparser;
 
-public final class Server {
+public class Server {
     private final String name;
     private final int playerCount;
     private final int playerLimit;
