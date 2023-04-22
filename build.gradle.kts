@@ -7,7 +7,7 @@ plugins {
 group = "com.github.allinkdev"
 version = "1.2.1"
 
-java.sourceCompatibility = JavaVersion.VERSION_1_8
+java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
     mavenCentral()

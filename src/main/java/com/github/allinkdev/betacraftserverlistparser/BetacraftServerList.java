@@ -13,6 +13,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 public final class BetacraftServerList {
+    private static final String USER_AGENT = "Java/" + Runtime.version();
     private static final String SERVERLIST_URL = "https://betacraft.uk/serverlist";
     private final List<Server> servers;
 
@@ -29,7 +30,9 @@ public final class BetacraftServerList {
 
             try {
                 document = Jsoup.connect(SERVERLIST_URL)
-                        .get()
+                        .userAgent(USER_AGENT)
+                        .header("Accept", "text/html, image/gif, image/jpeg, ; q=.2,/*; q=.2")
+                        .post()
                         .quirksMode(Document.QuirksMode.quirks);
             } catch (IOException e) {
                 throw new RuntimeException("Failed to get Jsoup document from server list url", e);
