@@ -4,6 +4,10 @@
 
 [Jsoup]: https://jsoup.org/
 
+[Classic4j]: https://github.com/FlorianMichael/Classic4J
+
+# This repository has been merged into [Classic4j], alongside a ClassiCube authentication wrapper, and will receive no further updates.
+
 # BetaCraftServerListParser
 
 A parser for the [BetaCraft Server List], written in Java.
