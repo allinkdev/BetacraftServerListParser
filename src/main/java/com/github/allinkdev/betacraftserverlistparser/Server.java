@@ -11,7 +11,7 @@ public class Server {
     private final String joinUrl;
     private final String gameVersion;
 
-    Server(final String name, final int playerCount, final int playerLimit, final String host, final int port, final Version version, final boolean onlineMode, final String joinUrl, final String gameVersion) {
+    public Server(final String name, final int playerCount, final int playerLimit, final String host, final int port, final Version version, final boolean onlineMode, final String joinUrl, final String gameVersion) {
         this.name = name.trim();
         this.playerCount = playerCount;
         this.playerLimit = playerLimit;
