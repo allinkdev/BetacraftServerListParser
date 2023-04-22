@@ -18,6 +18,13 @@ public enum Version {
         this.versionPrefixes = versionPrefixes;
     }
 
+    public String[] getVersionPrefixes() {
+        final String[] copy = new String[versionPrefixes.length];
+        System.arraycopy(versionPrefixes, 0, copy, 0, versionPrefixes.length);
+
+        return copy;
+    }
+
     public static Version fromString(final String versionString) {
         final String lowercaseVersionString = versionString.toLowerCase();
 
